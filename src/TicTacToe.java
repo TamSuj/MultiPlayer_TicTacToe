@@ -1,5 +1,5 @@
-// Developer: Gayvalin Sujaritchai (CS 3B)
-public class Main {
+// Developed by Gayvalin Sujaritchai (CS 3B)
+public class TicTacToe {
     public static void main(String[] args) {
         int numPlayers = 0, winnerStreak = 0;
 
@@ -26,25 +26,32 @@ public class Main {
         while(!GameLogic.full(board) && !GameLogic.end(board, winnerStreak)) {
 //            Iterate through each player
             for (int i = 0; i < numPlayers; i++) {
-                System.out.println("Player " + (i + 1) + "'s turn (" + players[i].getMark() + ")");
+                String mark = players[i].getMark();
                 int row = 0, col = 0;
 
-//                Prompt user to input desire row and column, if the spot is taken, ask user for new spot
+                System.out.println("Player " + (i + 1) + "'s turn (" + mark + ")");
+
+//                Prompt user to input desire row and column, if the spot is taken, ask user for new spot with board display
                 do {
-                    row = Helper.promptUserInput("Enter the number of row: ", 1, numPlayers+1);
-                    col = Helper.promptUserInput("Enter the number of column: ", 1, numPlayers+1);
+                    row = Helper.promptBoardInput("Enter the number of row: ", 1, numPlayers+1, board);
+                    col = Helper.promptBoardInput("Enter the number of column: ", 1, numPlayers+1, board);
                 } while (!GameLogic.emptySpace(row - 1, col - 1, board));
 
 //                If the board is not already full, fill in the spot with the player's mark
                 if (!GameLogic.full(board))
-                    board.fillBoard(row - 1, col - 1, players[i].getMark());
+                    board.fillBoard(row - 1, col - 1, mark);
 
 //                Display the board after the player made the move
                 Helper.display(board);
 
 //                If the board is full or there's a winner, terminate the game
-                if(GameLogic.full(board) || GameLogic.end(board, winnerStreak))
+                if(GameLogic.end(board, winnerStreak)) {
+                    System.out.println("Player " + GameLogic.playerNum(mark) + "(" + mark + ") won");
                     break;
+                } else if(GameLogic.full(board)) {
+                    System.out.println("The board is full and there's no winner (tie)");
+                    break;
+                }
             }
         }
         System.out.println("Game over! Thanks for playing!");

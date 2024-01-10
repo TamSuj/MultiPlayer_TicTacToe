@@ -27,7 +27,21 @@ public class Helper {
         System.out.print(message);
         result = getUserInput();
 
-        while (!GameLogic.validInput(3, 10, result)) {
+        while (!GameLogic.validInput(lowerBound, upperBound, result)) {
+            System.out.print("Re-" + message);
+            result = getUserInput();
+        }
+        return result;
+    }
+
+    public static int promptBoardInput(String message, int lowerBound, int upperBound, Board board){
+        int result = 0;
+
+        System.out.print(message);
+        result = getUserInput();
+
+        while (!GameLogic.validInput(lowerBound, upperBound, result)) {
+            board.printBoard();
             System.out.print("Re-" + message);
             result = getUserInput();
         }

@@ -14,7 +14,7 @@ public class GameLogic {
                     int count = 0;
 
                     for (int i = 0; i < size-col; i++) {
-                        if(board[row+i][col+i].equals(mark))
+                        if(validInput(0, size-1,row+i) && validInput(0, size-1,col+i) && board[row+i][col+i].equals(mark))
                             count++;
                     }
 
@@ -27,14 +27,12 @@ public class GameLogic {
                     count = 0;
 
                     for (int i = 0; i < size-col; i++) {
-                        if(board[row+i][col-i].equals(mark))
+                        if(validInput(0, size-1,row+i) && validInput(0, size-1,col-i) && board[row+i][col-i].equals(mark))
                             count++;
                     }
 
-                    if(count >= winnerStreak) {
-                        System.out.println("Diagonal match found");
+                    if(count >= winnerStreak)
                         return true;
-                    }
                 }
 
             }
@@ -63,10 +61,9 @@ public class GameLogic {
                             count++;
                     }
                     
-                    if(count >= winnerStreak) {
-                        System.out.println("Horizontal match of " + mark + " by Player " + playerNum(mark) + " is found");
+                    if(count >= winnerStreak)
                         return true;
-                    }
+
 
                 }
 
@@ -95,10 +92,8 @@ public class GameLogic {
                             count++;
                     }
 
-                    if(count >= winnerStreak) {
-                        System.out.println("Vertical match of " + mark + " by Player " + playerNum(mark) + " is found");
+                    if(count >= winnerStreak)
                         return true;
-                    }
 
                 }
 
