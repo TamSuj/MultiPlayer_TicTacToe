@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93125fc6-dcf8-47d1-9813-dba4c1439947" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TermProject_CS3B.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1704768095140</updated>
       <workItem from="1704768096414" duration="7132000" />
-      <workItem from="1704855311214" duration="9296000" />
+      <workItem from="1704855311214" duration="10692000" />
     </task>
     <servers />
   </component>

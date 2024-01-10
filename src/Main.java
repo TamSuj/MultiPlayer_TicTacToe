@@ -1,37 +1,13 @@
 // Developer: Gayvalin Sujaritchai (CS 3B)
 public class Main {
-    public static void display(Board board) {
-        System.out.println("Board: ");
-        board.printBoard();
-        System.out.println();
-    }
     public static void main(String[] args) {
+        int numPlayers = 0, winnerStreak = 0;
 
-        int numPlayers = 0;
-        int winnerStreak = 0;
+//        Get input number of users to initialize Player object and Board class and validate input
+        numPlayers = Helper.promptUserInput("Enter the number of players (3-10): ", 3, 10);
 
-//        Get input number of users to initialize Player object and Board class
-        System.out.print("Enter the number of players (3-10): ");
-        numPlayers = Helper.getUserInput();
-
-        while (!GameLogic.validInput(3, 10, numPlayers)) {
-            System.out.print("Re-enter the number of players (3-10): ");
-            numPlayers = Helper.getUserInput();
-        }
-
-//        Get input number of winner streak
-//        do{
-//            System.out.print("Enter the number of winning piece (3-" + (numPlayers+1) + "): ");
-//            winnerStreak = getUserInput();
-//        }while (!GameLogic.validInput(3, numPlayers+1, winnerStreak));
-
-        System.out.print("Enter the number of winning piece (3-" + (numPlayers+1) + "): ");
-        winnerStreak = Helper.getUserInput();
-
-        while (!GameLogic.validInput(3, numPlayers+1, winnerStreak)) {
-            System.out.print("Re-enter the number of winning piece (3-" + (numPlayers+1) + "): ");
-            winnerStreak = Helper.getUserInput();
-        }
+//        Get input number of pieces need to win the game and validate input
+        winnerStreak = Helper.promptUserInput("Enter the number of winning piece (3-" + (numPlayers+1) + "): ", 3, numPlayers+1);
 
 //        Initialize board according to the number of players
         Board board = new Board(numPlayers);
@@ -44,7 +20,7 @@ public class Main {
             players[i] = new Player(GameLogic.markers[i]);
 
 //        Display the starting board
-        display(board);
+        Helper.display(board);
 
 //        Start/continue the game as long as there's no winner and the board is not full
         while(!GameLogic.full(board) && !GameLogic.end(board, winnerStreak)) {
@@ -53,27 +29,24 @@ public class Main {
                 System.out.println("Player " + (i + 1) + "'s turn (" + players[i].getMark() + ")");
                 int row = 0, col = 0;
 
+//                Prompt user to input desire row and column, if the spot is taken, ask user for new spot
                 do {
-                    System.out.print("Enter the number of row: ");
-                    row = Helper.getUserInput();
-                    System.out.print("Enter the number of column: ");
-                    col = Helper.getUserInput();
-                    System.out.println();
-                } while (!GameLogic.validInput(0, numPlayers, row-1) || !GameLogic.validInput(0, numPlayers, col-1)
-                        ||!GameLogic.emptySpace(row - 1, col - 1, board));
+                    row = Helper.promptUserInput("Enter the number of row: ", 1, numPlayers+1);
+                    col = Helper.promptUserInput("Enter the number of column: ", 1, numPlayers+1);
+                } while (!GameLogic.emptySpace(row - 1, col - 1, board));
 
+//                If the board is not already full, fill in the spot with the player's mark
                 if (!GameLogic.full(board))
                     board.fillBoard(row - 1, col - 1, players[i].getMark());
 
-                display(board);
+//                Display the board after the player made the move
+                Helper.display(board);
 
+//                If the board is full or there's a winner, terminate the game
                 if(GameLogic.full(board) || GameLogic.end(board, winnerStreak))
                     break;
             }
         }
-
         System.out.println("Game over! Thanks for playing!");
-
     }
-
 }

@@ -14,4 +14,23 @@ public class Helper {
         }
         return output;
     }
+
+    public static void display(Board board) {
+        System.out.println("Board: ");
+        board.printBoard();
+        System.out.println();
+    }
+
+    public static int promptUserInput(String message, int lowerBound, int upperBound){
+        int result = 0;
+
+        System.out.print(message);
+        result = getUserInput();
+
+        while (!GameLogic.validInput(3, 10, result)) {
+            System.out.print("Re-" + message);
+            result = getUserInput();
+        }
+        return result;
+    }
 }
