@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Helper {
     /**
      * Prompt user to input a number and return the number. Re-prompt user if the input is invalid (not an integer)
-     * @return
+     * @return number (int)
      */
     public static int getUserInput() {
         Scanner input = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class Helper {
 
     /**
      * Display the board with labels:
-     * @param board
+     * @param board (Board)
      */
     public static void display(Board board) {
         System.out.println("Board: ");
@@ -74,6 +74,10 @@ public class Helper {
         return result;
     }
 
+    /**
+     * Prompt user to input if they want to start a new game or not (y/n). Return true if yes, else false
+     * @return true if restart game, else false (boolean)
+     */
     public static boolean continueGame() {
         System.out.print("Start a new game? (y/n): ");
         Scanner input = new Scanner(System.in);

@@ -2,7 +2,7 @@
  * GameLogic class that contains all the game logic (check vertical/horizontal/diagonal match, check if the board is full, etc.)
  */
 public class GameLogic {
-    final static String[] markers = {"X", "O", "*", "^", "%", "#", "@", "+", "/", "&", "$"}; // Array of markers for each player
+    final static String[] markers = {"X", "O", "*", "^", "%", "#", "@", "+", "/", "&"}; // Array of markers for each player
 
     /**
      * Check if there's a diagonal match of the passing mark in the board
@@ -33,7 +33,7 @@ public class GameLogic {
                     }
 
                     if(count >= winnerStreak) {
-                        System.out.println("Diagonal match found");
+//                        System.out.println("Diagonal match found");
                         return true;
                     }
 
@@ -48,7 +48,7 @@ public class GameLogic {
                     }
 
                     if(count >= winnerStreak) {
-                        System.out.println("Diagonal match found");
+//                        System.out.println("Diagonal match found");
                         return true;
                     }
                 }
@@ -95,7 +95,7 @@ public class GameLogic {
                     }
                     
                     if(count >= winnerStreak) {
-                        System.out.println("Horizontal match found");
+//                        System.out.println("Horizontal match found");
                         return true;
                     }
 
@@ -144,7 +144,7 @@ public class GameLogic {
                     }
 
                     if(count >= winnerStreak) {
-                        System.out.println("Vertical match found");
+//                        System.out.println("Vertical match found");
                         return true;
                     }
 
@@ -226,25 +226,25 @@ public class GameLogic {
      * @return true if there's a match, else false
      */
     public static boolean end(Board board, int winningStreak){
-        for (int i = 0; i < board.getBoard().length; i++) {
+        for (int i = 0; i < board.getBoard().length-1; i++) {
             String mark = markers[i];
             if(diagonal(board, mark, winningStreak) || horizontal(board, mark, winningStreak) || vertical(board, mark, winningStreak))
                 return true;
 
         }
-        return false;
+        return false; //return false by default
     }
 
     /**
      * Return the player number by passing the mark (index+1 since index starts at 0 but player number starts at 1)
      * @param mark
-     * @return index+1
+     * @return player number (index+1)
      */
     public static int playerNum(String mark){
         for (int i = 0; i < markers.length; i++) {
             if(markers[i].equals(mark))
                 return i+1;
         }
-        return -1; // Return -1 by default (if the mark is not found
+        return -1; // Return -1 by default (if the mark is not found)
     }
 }
