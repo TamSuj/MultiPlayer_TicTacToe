@@ -1,7 +1,11 @@
 public class Board {
     String[][] board; //2D array storing the marker of each player
+
+    /**
+     * Constructor which initialize the board (2D Array) with size numPlayers+1 x numPlayers+1
+     * @param numPlayers
+     */
     public Board(int numPlayers){
-//        Initialize board (2D array) with size numPlayers+1 x numPlayers+1
         board = new String[numPlayers+1][numPlayers+1];
 
         for (int i = 0; i < board.length; i++) {
@@ -10,10 +14,19 @@ public class Board {
         }
     }
 
+    /**
+     * Fill the board at the passing row and column with the passing sign
+     * @param row
+     * @param col
+     * @param sign
+     */
     public void fillBoard(int row, int col, String sign){
         board[row][col] = sign;
     }
 
+    /**
+     * Print the board with labels and borders
+     */
     public void printBoard(){
         for (int c = 0; c < board.length; c++)
             System.out.format("%4s", (c+1));
@@ -38,6 +51,11 @@ public class Board {
             System.out.println();
         }
     }
+
+    /**
+     * Getter to return the board
+     * @return board
+     */
     public String[][] getBoard(){
         return board;
     }
