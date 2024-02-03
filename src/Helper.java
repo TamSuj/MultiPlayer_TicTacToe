@@ -33,22 +33,24 @@ public class Helper {
     }
 
     /**
-     * Prompt user to input a number and validate the input if it's within the range
+     * Prompt user to input a number and validate the input if it's within the range. Re-prompt if the input is invalid by recursive call
      * @param message
      * @param lowerBound
      * @param upperBound
      * @return number (int)
      */
-    public static int promptUserInput(String message, int lowerBound, int upperBound){
+    public static int promptUserInput(String message, int lowerBound, int upperBound) {
         int result = 0;
 
         System.out.print(message);
         result = getUserInput();
 
+        // Validate input. Re-prompt user if the input is invalid (ex: not within the range, not an integer)
         while (!GameLogic.validInput(lowerBound, upperBound, result)) {
             System.out.print("Re-" + message);
             result = getUserInput();
         }
+
         return result;
     }
 
@@ -66,11 +68,13 @@ public class Helper {
         System.out.print(message);
         result = getUserInput();
 
-        while (!GameLogic.validInput(lowerBound, upperBound, result)) {
+        // Validate input. Re-prompt user if the input is invalid (ex: not within the range, not an integer)
+        while(!GameLogic.validInput(lowerBound, upperBound, result)) {
             board.printBoard();
-            System.out.print("The spot is taken/invalid, re-" + message);
-            result = getUserInput();
+            System.out.println("The spot is taken/invalid.");
+            return promptBoardInput(message, lowerBound, upperBound, board);
         }
+
         return result;
     }
 

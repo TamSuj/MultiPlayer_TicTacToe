@@ -8,7 +8,7 @@ public class TicTacToe {
             numPlayers = Helper.promptUserInput("Enter the number of players (3-10): ", 3, 10);
 
 //        Get input number of pieces need to win the game and validate input
-            winnerStreak = Helper.promptUserInput("Enter the number of winning piece (3-" + (numPlayers + 1) + "): ", 3, numPlayers + 1);
+            winnerStreak = Helper.promptUserInput("Enter the number of winning pieces (3-" + (numPlayers + 1) + "): ", 3, numPlayers + 1);
 
 //        Initialize board according to the number of players
             Board board = new Board(numPlayers);

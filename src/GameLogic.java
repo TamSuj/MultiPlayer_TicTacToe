@@ -40,8 +40,9 @@ public class GameLogic {
                     // Diagonal match in left direction
                     count = 0;
 
-                    for (int i = 0; i < size-col; i++) {
-                        if(validInput(0, size-1,row+i) && validInput(0, size-1,col-i) && board[row+i][col-i].equals(mark))
+                    for (int i = 0; i <= col; i++) {
+                        if(validInput(0, size-1,row+i) && validInput(0, size-1,col-i)
+                                && board[row+i][col-i].equals(mark))
                             count++;
                         else
                             break;
@@ -225,7 +226,7 @@ public class GameLogic {
      * @param winningStreak
      * @return true if there's a match, else false
      */
-    public static boolean end(Board board, int winningStreak){
+    public static boolean end(Board board, int winningStreak) {
         for (int i = 0; i < board.getBoard().length-1; i++) {
             String mark = markers[i];
             if(diagonal(board, mark, winningStreak) || horizontal(board, mark, winningStreak) || vertical(board, mark, winningStreak))

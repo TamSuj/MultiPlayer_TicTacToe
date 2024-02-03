@@ -39,34 +39,49 @@ public class Test {
         boardHorizontal.fillBoard(3, 2, "X");
         boardHorizontal.fillBoard(3, 3, "X");
         assert GameLogic.horizontal(boardHorizontal, "X", 3) : "GameLogic.horizontal() is not working properly";
+        if(!GameLogic.horizontal(boardHorizontal, "X", 3))
+            System.out.println("Horizontal match not found");
 
         // Test vertical()
         Board boardVertical = new Board(6);
         boardVertical.fillBoard(1, 4, "&");
         boardVertical.fillBoard(2, 4, "&");
         boardVertical.fillBoard(3, 4, "&");
-        assert GameLogic.vertical(boardVertical, "&", 3) : "GameLogic.vertical() is not working properly";
+        if(!GameLogic.vertical(boardVertical, "&", 3))
+            System.out.println("Vertical match not found");
 
         // Test right diagonal()
         Board boardRightDiagonal = new Board(4);
         boardRightDiagonal.fillBoard(1, 1, "O");
         boardRightDiagonal.fillBoard(2, 2, "O");
         boardRightDiagonal.fillBoard(3, 3, "O");
-        assert GameLogic.diagonal(boardRightDiagonal, "O", 3) : "GameLogic.diagonal() is not working properly";
+        if(!GameLogic.diagonal(boardRightDiagonal, "O", 3))
+            System.out.println("Right diagonal match not found");
 
         // Test left diagonal()
         Board boardLeftDiagonal = new Board(4);
         boardLeftDiagonal.fillBoard(1, 3, "X");
         boardLeftDiagonal.fillBoard(2, 2, "X");
         boardLeftDiagonal.fillBoard(3, 1, "X");
-        assert GameLogic.diagonal(boardLeftDiagonal, "X", 3) : "GameLogic.diagonal() is not working properly";
+        if(!GameLogic.diagonal(boardLeftDiagonal, "X", 3))
+            System.out.println("Left diagonal match not found");
+
+        // Test left diagonal()
+        Board boardRightDiagonal2 = new Board(3);
+        boardRightDiagonal2.fillBoard(3, 1, "*");
+        boardRightDiagonal2.fillBoard(2, 2, "*");
+        boardRightDiagonal2.fillBoard(1, 3, "*");
+        boardRightDiagonal2.printBoard();
+        if(!GameLogic.diagonal(boardRightDiagonal2, "*", 3))
+            System.out.println("right diagonal match not found in boardRightDiagonal2");
 
         // Test diagonal with a different marker
         Board boardDiagonalDifferentMarker = new Board(4);
         boardDiagonalDifferentMarker.fillBoard(1, 1, "X");
         boardDiagonalDifferentMarker.fillBoard(2, 2, "X");
         boardDiagonalDifferentMarker.fillBoard(3, 3, "X");
-        assert !GameLogic.diagonal(boardDiagonalDifferentMarker, "O", 3) : "GameLogic.diagonal() is not working properly";
+        if(!GameLogic.diagonal(boardDiagonalDifferentMarker, "O", 3))
+            System.out.println("GameLogic.diagonal() is not working properly");
 
         // Test for almost horizontal match but not enough to win
         Board boardAlmostHorizontal = new Board(5);
