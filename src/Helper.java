@@ -72,7 +72,7 @@ public class Helper {
         while(!GameLogic.validInput(lowerBound, upperBound, result)) {
             board.printBoard();
             System.out.println("The spot is taken/invalid.");
-            return promptBoardInput(message, lowerBound, upperBound, board);
+            result = getUserInput();
         }
 
         return result;
