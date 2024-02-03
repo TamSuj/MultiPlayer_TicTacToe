@@ -23,7 +23,7 @@ public class Helper {
     }
 
     /**
-     * Display the board with labels:
+     * Display the board with labels.
      * @param board (Board)
      */
     public static void display(Board board) {
@@ -95,9 +95,10 @@ public class Helper {
             return continueGame(); // Recursive
         }
 
-        if (answer.toLowerCase().equals("y")) {
+//        Return true if the input is "y", else false. Re-prompt user if the input is invalid
+        if (answer.equalsIgnoreCase("y")) {
             return true;
-        } else if (answer.toLowerCase().equals("n")) {
+        } else if (answer.equalsIgnoreCase("n")) {
             return false;
         } else {
             System.out.println("Invalid input, re-enter:");
