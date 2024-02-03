@@ -19,6 +19,14 @@ Welcome to the Multi-Player Tic-Tac-Toe program! This program allows multiple us
 
 To start the game, simply run the program and follow the prompts to set up the game parameters and make moves.
 
+## Contributors
+
+- [Gayvalin Tammy Sujaritchai](https://www.linkedin.com/in/tammy-suj/)
+
+## Notes
+
+- Some of the concepts used in the program (ex: recursion and exception handling) has not been covered in the course. The program was developed with the knowledge and skills learned from CS 8 class (Data Structure) and additional resources.
+
 ## Example
 
 ```java
