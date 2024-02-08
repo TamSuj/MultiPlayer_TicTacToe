@@ -25,7 +25,7 @@ To start the game, simply run the program and follow the prompts to set up the g
 
 ## Notes
 
-- Some of the concepts used in the program (ex: recursion and exception handling) has not been covered in the course. The program was developed with the knowledge and skills learned from CS 8 class (Data Structure) and additional resources (ex: geeksforgeeks).
+- Some of the concepts used in the program (ex: recursion) has not been covered in the course. The program was developed with the knowledge and skills learned from CS 8 class (Data Structure) and additional resources (ex: geeksforgeeks).
 
 ## Example
 
