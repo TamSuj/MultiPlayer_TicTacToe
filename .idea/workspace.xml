@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93125fc6-dcf8-47d1-9813-dba4c1439947" name="Changes" comment="Updated comments" />
+    <list default="true" id="93125fc6-dcf8-47d1-9813-dba4c1439947" name="Changes" comment="Updated workspace">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +82,7 @@
       <workItem from="1706939483523" duration="8785000" />
       <workItem from="1707227071264" duration="2663000" />
       <workItem from="1707402801291" duration="3018000" />
+      <workItem from="1707486674173" duration="609000" />
     </task>
     <task id="LOCAL-00001" summary="Updated readme">
       <option name="closed" value="true" />
@@ -97,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707405713700</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated workspace">
+      <option name="closed" value="true" />
+      <created>1707487157942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707487157942</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +128,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Updated comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated comments" />
+    <MESSAGE value="Updated workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

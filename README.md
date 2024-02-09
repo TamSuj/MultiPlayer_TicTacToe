@@ -1,6 +1,7 @@
 # Multi-Player Tic-Tac-Toe
 
-Welcome to the Multi-Player Tic-Tac-Toe program! This program allows multiple users to play Tic-Tac-Toe simultaneously for up to 10 players. It includes features to ensure valid user inputs, checks for winners based on customizable winning conditions (winnerStreak), and ends the game when a winner is detected.
+Welcome to the Multi-Player Tic-Tac-Toe program! This program allows multiple users to play Tic-Tac-Toe simultaneously for up to 10 players. 
+It includes features to ensure valid user inputs, checks for winners based on customizable winning conditions (winnerStreak), and ends the game when a winner is detected (or the board is full).
 
 ## How to Play
 
