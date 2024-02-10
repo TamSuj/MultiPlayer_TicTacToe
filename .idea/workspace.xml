@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93125fc6-dcf8-47d1-9813-dba4c1439947" name="Changes" comment="Updated workspace">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="93125fc6-dcf8-47d1-9813-dba4c1439947" name="Changes" comment="Updated comment">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,8 @@
       <workItem from="1706939483523" duration="8785000" />
       <workItem from="1707227071264" duration="2663000" />
       <workItem from="1707402801291" duration="3018000" />
-      <workItem from="1707486674173" duration="609000" />
+      <workItem from="1707486674173" duration="1790000" />
+      <workItem from="1707533586263" duration="632000" />
     </task>
     <task id="LOCAL-00001" summary="Updated readme">
       <option name="closed" value="true" />
@@ -108,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707487157942</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated">
+      <option name="closed" value="true" />
+      <created>1707493675841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707493675841</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,17 +139,8 @@
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Updated comments" />
     <MESSAGE value="Updated workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated workspace" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Test.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Updated" />
+    <MESSAGE value="Updated comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated comment" />
   </component>
 </project>

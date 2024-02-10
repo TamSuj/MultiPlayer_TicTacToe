@@ -9,7 +9,7 @@ public class GameLogic {
      * @param board
      * @param mark
      * @param winnerStreak
-     * @return
+     * @return true if there's a diagonal match, else false
      */
     public static boolean diagonal(String[][] board, String mark, int winnerStreak) {
 //        Implement here
@@ -66,7 +66,7 @@ public class GameLogic {
      * @param board
      * @param mark
      * @param winnerStreak
-     * @return
+     * @return true if there's a diagonal match, else false
      */
     public static boolean diagonal(Board board, String mark, int winnerStreak) {
         return diagonal(board.getBoard(), mark, winnerStreak);
@@ -77,7 +77,7 @@ public class GameLogic {
      * @param board
      * @param mark
      * @param winnerStreak
-     * @return
+     * @return true if there's a horizontal match, else false
      */
     public static boolean horizontal(String[][] board, String mark, int winnerStreak) {
         int size = board.length;
@@ -115,7 +115,7 @@ public class GameLogic {
      * @param board
      * @param mark
      * @param winnerStreak
-     * @return
+     * @return true if there's a horizontal match, else false
      */
     public static boolean horizontal(Board board, String mark, int winnerStreak) {
         return horizontal(board.getBoard(), mark, winnerStreak);
@@ -180,7 +180,7 @@ public class GameLogic {
     /**
      * Overloaded method of full that takes Board object as parameter (usability)
      * @param board
-     * @return
+     * @return true if the board is full, else false
      */
     public static boolean full(Board board) {
         return full(board.getBoard());
@@ -202,7 +202,7 @@ public class GameLogic {
      * @param row
      * @param col
      * @param board
-     * @return
+     * @return true if the spot is empty, else false
      */
     public static boolean emptySpace(int row, int col, Board board) {
         return board.getBoard()[row][col].equals("_");
