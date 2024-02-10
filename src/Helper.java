@@ -71,7 +71,7 @@ public class Helper {
         // Validate input. Re-prompt user if the input is invalid (ex: not within the range, not an integer)
         while(!GameLogic.validInput(lowerBound, upperBound, result)) {
             board.printBoard();
-            System.out.println("The spot is taken/invalid." + message);
+            System.out.println("The spot is taken/invalid. " + message);
             result = getUserInput();
         }
 

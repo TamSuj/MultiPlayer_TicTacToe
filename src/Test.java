@@ -47,8 +47,7 @@ public class Test {
         boardVertical.fillBoard(1, 4, "&");
         boardVertical.fillBoard(2, 4, "&");
         boardVertical.fillBoard(3, 4, "&");
-        if(!GameLogic.vertical(boardVertical, "&", 3))
-            System.out.println("Vertical match not found");
+        assert(GameLogic.vertical(boardVertical, "&", 3));
 
         // Test right diagonal()
         Board boardRightDiagonal = new Board(4);
@@ -71,7 +70,6 @@ public class Test {
         boardRightDiagonal2.fillBoard(3, 1, "*");
         boardRightDiagonal2.fillBoard(2, 2, "*");
         boardRightDiagonal2.fillBoard(1, 3, "*");
-        boardRightDiagonal2.printBoard();
         if(!GameLogic.diagonal(boardRightDiagonal2, "*", 3))
             System.out.println("right diagonal match not found in boardRightDiagonal2");
 
@@ -80,8 +78,11 @@ public class Test {
         boardDiagonalDifferentMarker.fillBoard(1, 1, "X");
         boardDiagonalDifferentMarker.fillBoard(2, 2, "X");
         boardDiagonalDifferentMarker.fillBoard(3, 3, "X");
-        if(!GameLogic.diagonal(boardDiagonalDifferentMarker, "O", 3))
+        //Different marker should not match
+        if(GameLogic.diagonal(boardDiagonalDifferentMarker, "O", 3)) {
+            boardDiagonalDifferentMarker.printBoard();
             System.out.println("GameLogic.diagonal() is not working properly");
+        }
 
         // Test for almost horizontal match but not enough to win
         Board boardAlmostHorizontal = new Board(5);
