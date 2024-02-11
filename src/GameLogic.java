@@ -229,6 +229,8 @@ public class GameLogic {
     public static boolean end(Board board, int winningStreak) {
         for (int i = 0; i < board.getBoard().length-1; i++) {
             String mark = markers[i];
+
+            // Check if there's a diagonal, horizontal, or vertical match of the mark. If there's a match, return true
             if(diagonal(board, mark, winningStreak) || horizontal(board, mark, winningStreak) || vertical(board, mark, winningStreak))
                 return true;
 

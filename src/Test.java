@@ -4,6 +4,7 @@ public class Test {
         testBoardClass();
         testGameLogicClass();
         testHelperClass();
+        testPlayerClass();
         System.out.println("All tests passed!");
     }
 
@@ -24,7 +25,8 @@ public class Test {
         assert board.getBoard()[1][2].equals("X") : "fillBoard() is not working properly";
         assert !GameLogic.emptySpace(1, 2, board) : "emptySpace() is not working properly";
 
-        // Additional board testing can be added based on specific requirements
+        // Test printBoard()
+        board.printBoard();
     }
 
     /**
@@ -44,10 +46,10 @@ public class Test {
 
         // Test vertical()
         Board boardVertical = new Board(6);
-        boardVertical.fillBoard(1, 4, "&");
-        boardVertical.fillBoard(2, 4, "&");
-        boardVertical.fillBoard(3, 4, "&");
-        assert(GameLogic.vertical(boardVertical, "&", 3));
+        boardVertical.fillBoard(1, 4, "*");
+        boardVertical.fillBoard(2, 4, "*");
+        boardVertical.fillBoard(3, 4, "*");
+        assert(GameLogic.vertical(boardVertical, "*", 3));
 
         // Test right diagonal()
         Board boardRightDiagonal = new Board(4);
@@ -97,6 +99,33 @@ public class Test {
         boardAlmostVertical.fillBoard(2, 4, "X");
         boardAlmostVertical.fillBoard(4, 4, "X");
         assert !GameLogic.vertical(boardAlmostVertical, "X", 3) : "GameLogic.vertical() is not working properly";
+
+        // Test playerNum()
+        if(GameLogic.playerNum("%") != 5)
+            System.out.println("GameLogic.playerNum() is not working properly");
+
+        // Test full()
+        Board boardFull = new Board(3);
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++)
+                boardFull.fillBoard(i, j, "X");
+        }
+        if(!GameLogic.full(boardFull))
+            System.out.println("GameLogic.full() is not working properly");
+
+        // Test validInput()
+        if(!GameLogic.validInput(1, 3, 2))
+            System.out.println("GameLogic.validInput() is not working properly");
+        if(GameLogic.validInput(1, 3, 4))
+            System.out.println("GameLogic.validInput() is not working properly");
+
+        // Test end()
+        Board boardEnd = new Board(3);
+        for (int i = 0; i < 4; i++)
+            boardEnd.fillBoard(0, i, "O");
+        if(!GameLogic.end(boardEnd, 4))
+            System.out.println("GameLogic.end() is not working properly");
+
     }
 
     /**
@@ -108,5 +137,16 @@ public class Test {
         // Test promptUserInput()
         int userInput = Helper.promptUserInput("Enter a number (1-5): ", 1, 5);
         assert userInput >= 1 && userInput <= 5 : "Helper.promptUserInput() is not working properly";
+    }
+
+    /**
+     * Test Player class
+     */
+    public static void testPlayerClass() {
+        System.out.println("Testing Player class...");
+
+        // Test Player initialization
+        Player player = new Player("X");
+        assert player.getMark().equals("X") : "Player initialization is not working properly";
     }
 }
